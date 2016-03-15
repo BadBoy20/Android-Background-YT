@@ -1,0 +1,68 @@
+package com.example.gitgud.myapplication;
+
+import android.content.Intent;
+
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+
+
+public class searchedActivity extends AppCompatActivity {
+
+    ListView list;
+
+    String[] title;
+    String[] published ;
+    String[] views ;
+    String[] URLs;
+    String[] channels;
+    Bitmap[] bitmaps;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_searched);
+
+        title = new String[MainActivity.mainList.size()];
+        published = new String[MainActivity.mainList.size()];
+        views = new String[MainActivity.mainList.size()];
+        URLs = new String[MainActivity.mainList.size()];
+        channels = new String[MainActivity.mainList.size()];
+        bitmaps = new Bitmap[MainActivity.mainList.size()];
+        for(int i = 0; i< MainActivity.mainList.size(); i++){
+            title[i] = MainActivity.mainList.get(i).getTitle();
+            published[i] = MainActivity.mainList.get(i).getPublished();
+            views[i] = MainActivity.mainList.get(i).getViews();
+            URLs[i] = MainActivity.mainList.get(i).getURLs();
+            channels[i] = MainActivity.mainList.get(i).getChannel();
+            bitmaps[i] = MainActivity.mainList.get(i).getBitmap();
+        }
+        CustomList adapter = new
+                CustomList(searchedActivity.this, title, published, views, channels, bitmaps);
+        list=(ListView)findViewById(R.id.listView);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = new Intent(searchedActivity.this, Downloadable.class);
+                intent.putExtra("Title",title[+position]);
+                intent.putExtra("Subtitle", published[+position]);
+                intent.putExtra("Views",views[+position]);
+                intent.putExtra("URLs",URLs[+position]);
+                intent.putExtra("channels",channels[+position]);
+                intent.putExtra("BitmapImage", bitmaps[+position]);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
+
+}

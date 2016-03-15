@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="0dp" >
+
+    <TextView
+        android:id="@+id/txt"
+        android:text="Justin Timberlake - Not a Bad thing"
+        android:layout_width="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:text="Published 50 years ago"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_below="@+id/txt"
+        android:layout_alignLeft="@+id/txt"
+        android:layout_alignStart="@+id/txt" />
+    <TextView
+        android:id="@+id/views"
+        android:text="11111 views"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_below="@+id/subtitle"
+        android:layout_alignLeft="@+id/subtitle"
+        android:layout_alignStart="@+id/subtitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="New Text"
+        android:id="@+id/channel"
+        android:paddingLeft="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/views"
+        android:layout_alignLeft="@+id/views"
+        android:layout_alignStart="@+id/views" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
