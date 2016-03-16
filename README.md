@@ -22,3 +22,7 @@ Other options:
 
 In the server side code, there is a variable for file Path, to temporarily put your music files in. 
 A maxFiles variable that tells the computer how many files it can keep. And the server.js file is programmed so that an array is kept of how many files are in there currently. when the number of files you have on the server exceed the MaxFiles value, the server deletes the first file, and so on..
+
+<b>Collaboration:</b>
+
+Pull Requests, suggestions and contributions are allowed and in fact, encouraged.
